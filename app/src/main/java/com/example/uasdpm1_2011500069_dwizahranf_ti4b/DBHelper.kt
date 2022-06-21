@@ -17,10 +17,13 @@ class DBHelper (context: Context): SQLiteOpenHelper(context, "campuss",null,1){
 
     override fun onCreate(db: SQLiteDatabase?) {
         sql = """create table $tabel  (
-            |kdMatkul char (5) primary key,
-            |nm_matkul varchar (50) not null,
-            |sks integer not null,
-            |sifat varchar(7) not null
+            |NIDN char (10) primary key,
+            |nama_dosen varchar (50) not null,
+            |Jabatan integer not null,
+            |golongan_pangkat varchar(30) not null,
+            |Pendidikan char(2) not null,
+            |Keahlian varchar(30) not null,
+            |Program_Studi varchar
             )
         """.trimMargin()
         db?.execSQL(sql)
